@@ -3,6 +3,7 @@
 
 # Displays the inventory.
 def display_inventory(inventory):
+    inv = {asd}
     pass
 
 
