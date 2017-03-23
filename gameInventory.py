@@ -2,14 +2,24 @@
 # so they work according to the specification
 
 # Displays the inventory.
-def display_inventory(inventory):
-    inv = {asd}
-    pass
-
+inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+def display_inventory(inv):
+    print("Inventory:")
+    for k, v in inv.items():
+        print(v, k)
+    print("Total number of items: " + str(sum(inv.values())) +"\n")
+display_inventory(inv)
 
 # Adds to the inventory dictionary a list of items from added_items.
 def add_to_inventory(inventory, added_items):
-    pass
+    for i in added_items:
+        if i in inventory:
+            inv[i] +=1
+        else:
+            inv.update({i:1})
+add_to_inventory(inv, dragon_loot)
+display_inventory(inv)
 
 
 # Takes your inventory and displays it in a well-organized table with 
