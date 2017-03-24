@@ -2,6 +2,8 @@
 # so they work according to the specification
 
 # Displays the inventory.
+
+import csv
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 def display_inventory(inventory):
@@ -56,10 +58,14 @@ print_table(inv, "count,desc")
 # The filename comes as an argument, but by default it's 
 # "import_inventory.csv". The import automatically merges items by name.
 # The file format is plain text with comma separated values (CSV).
-def import_inventory(inventory, filename="import_inventory.csv"):
-    pass
+def import_inventory(inventory, filename="test_inventory.csv"):
+    with open('test_inventory.csv') as f:
+         lines = [line.rstrip('   ') for line in f]
+    print(lines)
 
 
+
+import_inventory(inv)
 # Exports the inventory into a .csv file.
 # if the filename argument is None it creates and overwrites a file
 # called "export_inventory.csv". The file format is the same plain text 
